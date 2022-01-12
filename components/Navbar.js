@@ -14,7 +14,7 @@ const Navbar = () => {
           <Image src="/images/telephone.png" width={32} height={32} alt='phone' />
         </div>
         <div className={styles.texts}>
-          <div className={styles.text}>ORDER NOW!</div>
+          <div className={styles.text}>Your H-Life Rep</div>
           <div className={styles.text}>508-558-2681</div>
         </div>
       </div>
@@ -24,10 +24,16 @@ const Navbar = () => {
               <li className={styles.listItem}>HomePage</li>
             </Link>
           
-            <li className={styles.listItem}>Products</li>
-            <li className={styles.listItem}>Menu</li>
-            <Image src='/images/snacks.png' width={190} height={170} alt='logo' className={styles.logo} />
+            {/* <li className={styles.listItem}>Products</li> */}
+            {/* <li className={styles.listItem}>Menu</li> */}
+             
             <li className={styles.listItem}>Blog</li>
+           <li>
+               <Image src='/images/company/logo.png' width={300} height={70} alt='logo' className={styles.logo} />
+           </li>
+          
+          
+           
             <li className={styles.listItem}>Contact</li>
             <Link href='/admin/login' passHref>
             <li className={styles.listItem}>Admin</li>
@@ -35,7 +41,7 @@ const Navbar = () => {
             
           </ul>
       </div>
-      <Link href='/cart'>
+      <Link href='/cart' passHref>
       <div className={styles.item}>
           <div className={styles.cart}>
           <Image src='/images/cart.png' width={30} height={30} alt='logo' />
