@@ -4,7 +4,7 @@
   justify-content: space-between;
   height: 100px;
   padding: 0px 50px;
-  background-color: #d1411e;
+  background-color: #7ac143;
   position: sticky;
   top: 0;
   z-index: 999;
@@ -13,7 +13,9 @@
 .item {
     flex: 1;
     display: flex;
-    align-items: center
+    align-items: center;
+    /* justify-content: space-between; */
+  
 }
 
 .item:nth-child(2){
@@ -38,7 +40,7 @@
 }
 
 .text:first-child {
-    font-size: 12px;
+    font-size: 18px;
     font-weight: 500;
 }
 
@@ -53,11 +55,14 @@
     align-items: center;
     list-style: none;
     color: white;
+    margin-left: 50px
+    
 }
 
 .listItem {
     margin: 20px;
-    margin-right: 30px;
+    margin-left: 50px;
+    margin-right: 50px;
     font-weight: 500;
     cursor: pointer;
 }
@@ -80,11 +85,12 @@
     justify-content: center;
     align-items: center;
     font-weight: bold;
-    color: #d1411e
+    color: #7ac143
 }
 
 .logo {
-    border-radius: 5px;
+    
+
 }
 
 
