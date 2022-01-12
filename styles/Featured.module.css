@@ -1,5 +1,5 @@
 .container {
-    background-color: #d1411e;
+    background-color: #b0da90;
     height: calc(100vh - 100px);
     overflow: hidden;
 
@@ -28,6 +28,11 @@
     position: relative;
     width: 100vw;
     height: 80%;
+    
+}
+
+.images {
+    border-radius: 50% !important;
 }
 
 
