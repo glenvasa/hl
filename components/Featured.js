@@ -6,10 +6,10 @@ const Featured = () => {
   const [index, setIndex] = useState(0);
 
   const images = [
-    "/images/pizza-man.png",
-    "/images/free-delivery.png",
-    "/images/cool-pizza.png",
-    ,
+    "/images/products/Formula1_600x600_USEN.jpg",
+    "/images/products/Formula2_600x600_USEN.jpg",
+    "/images/products/Formula3_600x600_USEN.jpg"
+   ,
   ];
 
   const handleArrow = (direction) => {
@@ -36,6 +36,7 @@ const Featured = () => {
           // width={100}
           // height={100}
           alt="left-arrow"
+          
         />
       </div>
 
@@ -55,6 +56,7 @@ const Featured = () => {
               layout="fill"
               objectFit="contain"
               alt="featured-item"
+              className="images"
             />
           </div>
         ))}
