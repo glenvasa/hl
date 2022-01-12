@@ -6,17 +6,17 @@ import { useDispatch } from "react-redux";
 import { addProduct} from '../../redux/cartSlice'
 import Link from 'next/link'
 
-const Product = ({ pizza }) => {
-  const [basePrice, setBasePrice] = useState(pizza.prices[0]);
+const Product = ({ product }) => {
+  const [basePrice, setBasePrice] = useState(product.prices[0]);
   const [extrasCost, setExtrasCost] = useState(0);
   const [extrasArray, setExtrasArray] = useState([]);
-  const [totalPrice, setTotalPrice] = useState(pizza.prices[0]);
+  const [totalPrice, setTotalPrice] = useState(product.prices[0]);
   const [quantity, setQuantity] = useState(1)
 
 const dispatch = useDispatch()
 
 const handleAddToCart = () => {
-    dispatch(addProduct({...pizza, extrasArray, totalPrice, quantity}))
+    dispatch(addProduct({...product, extrasArray, totalPrice, quantity}))
   }
 
 
@@ -46,47 +46,47 @@ const handleAddToCart = () => {
       <div className={styles.left}>
         <div className={styles.imgContainer}>
           <Image
-            src={pizza.img}
+            src={product.img}
             objectFit="contain"
             layout="fill"
-            alt="pizza"
+            alt="product"
           />
         </div>
       </div>
       <div className={styles.right}>
-        <h1 className={styles.title}>{pizza.title}</h1>
+        <h1 className={styles.title}>{product.title}</h1>
         <span className={styles.price}>${totalPrice.toFixed(2)}</span>
-        <p className={styles.desc}>{pizza.desc}</p>
+        <p className={styles.desc}>{product.desc}</p>
         <h3 className={styles.choose}>Choose the size</h3>
         <div className={styles.sizes}>
           <div
             className={styles.size}
-            onClick={() => setBasePrice(pizza.prices[0])}
+            onClick={() => setBasePrice(product.prices[0])}
           >
             <Image src="/images/size.png " alt="size" layout="fill" />
             <span className={styles.number}>Small</span>
-           <span className={styles.basePrice}>${pizza.prices[0].toFixed(2)}</span> 
+           <span className={styles.basePrice}>${product.prices[0].toFixed(2)}</span> 
           </div>
           <div
             className={styles.size}
-            onClick={() => setBasePrice(pizza.prices[1])}
+            onClick={() => setBasePrice(product.prices[1])}
           >
             <Image src="/images/size.png " alt="size" layout="fill" />
             <span className={styles.number}>Medium</span>
-            <span className={styles.basePrice}>${pizza.prices[1].toFixed(2)}</span> 
+            <span className={styles.basePrice}>${product.prices[1].toFixed(2)}</span> 
           </div>
           <div
             className={styles.size}
-            onClick={() => setBasePrice(pizza.prices[2])}
+            onClick={() => setBasePrice(product.prices[2])}
           >
             <Image src="/images/size.png " alt="size" layout="fill" />
             <span className={styles.number}>Large</span>
-            <span className={styles.basePrice}>${pizza.prices[2].toFixed(2)}</span> 
+            <span className={styles.basePrice}>${product.prices[2].toFixed(2)}</span> 
           </div>
         </div>
         <h3 className={styles.additional}>Any extras?</h3>
         <div className={styles.ingredients}>
-          {pizza.extraOptions.map((option, index) => (
+          {product.extraOptions.map((option, index) => (
             <div key={index} className={styles.option}>
               <input
                 type="checkbox"
@@ -119,7 +119,7 @@ export async function getServerSideProps({ params }) {
 
   return {
     props: {
-      pizza: res.data,
+      product: res.data,
     },
   };
 }
